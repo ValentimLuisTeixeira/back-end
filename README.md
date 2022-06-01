@@ -1,27 +1,35 @@
-# ANG3d
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+# Custom backend template
 
-## Development server
+Backend template ready with express typescript, http/https, socket.io, cronjob.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Authors
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [@PlusIvan](https://www.github.com/PlusIvan)
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation / Setup
 
-## Running unit tests
+```bash
+  npm install
+  cd /src/private
+  cp .env-template .env
+```
+ Last thing is to check for file **./src/.express.ts** & modify array of **"Access-Control-Allow-Origin"** according to your frontend needs.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Used packages
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- "@types/cron": "^1.7.3",
+- "@types/express": "^4.17.13",
+- "@types/jsonwebtoken": "^8.5.8",
+- "@types/uuid": "^8.3.4",
+- "cron": "^2.0.0",
+- "dotenv": "^16.0.0",
+- "express": "^4.18.1",
+- "helmet": "^5.0.2",
+- "jsonwebtoken": "^8.5.1",
+- "nodemon": "^2.0.16",
+- "socket.io": "^4.5.0",
+- "typescript": "^4.6.4",
+- "uuid": "^8.3.2"

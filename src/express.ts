@@ -23,7 +23,7 @@ application.use(helmet());
 application.use((request, response, next) => {
     //response.header("Access-Control-Allow-Headers", ["Origin", "X-Requested-With", "Content-Type", "Accept"]);
     response.header("Access-Control-Allow-Headers", ["Authorization"]);
-    response.header("Access-Control-Allow-Origin", ["http://192.168.1.2:7777"]); 
+    response.header("Access-Control-Allow-Origin", ["http://localhost:4200"]); 
     response.header("Access-Control-Allow-Methods", ["POST", "GET"]);
     next();
 });

@@ -9,6 +9,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 const MaterialsModules = [MatSlideToggleModule,MatInputModule,MatButtonModule,MatButtonToggleModule,];
 
 
@@ -20,6 +21,7 @@ const MaterialsModules = [MatSlideToggleModule,MatInputModule,MatButtonModule,Ma
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     ...MaterialsModules,
   ],
   providers: [],

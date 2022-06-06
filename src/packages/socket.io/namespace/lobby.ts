@@ -26,7 +26,7 @@ space.on('connection', (socket) => {
 
       
 
-        socket.on('join', (reason) => {
+        socket.on('join', (data:{room: string}) => {
             socket.data = {
                 idade: new Date(),
                 indentification:uuid.createUUIDv4(),
@@ -39,9 +39,24 @@ space.on('connection', (socket) => {
                  algorithm:'HS512' ,
                  expiresIn:'1h'
                 }});
-
+            socket.join(data.room);
             socket.emit('toma-la', token);
 
+
+
+       /**
+         * Ao mesmo tempo, emitir ao cliente novo room-data a informaçao do proprio room
+         */
+
+
+       
+        const listSockets = [ ...new Set(space.adapter.rooms.get(data.room)?.values()) ];
+        const socketDatas: Array<any> = [];
+        listSockets.forEach((socketId) => {
+            const socket = space.sockets.get(socketId);
+            socketDatas.push(socket?.data);
+        });
+        socket.emit('room-data', socketDatas);
             space.emit('novo-user',socket.data)
 
         });
